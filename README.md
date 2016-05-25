@@ -67,19 +67,22 @@ Your emergency scratch codes are:
   00000000
 
 > Do you want me to update your "/Users/user/.google_authenticator" file (y/n) y
-
+```
+``` terminal
 # 詢問1Token是否於時效內可多次使用
 > Do you want to disallow multiple uses of the same authentication
 token? This restricts you to one login about every 30s, but it increases
 your chances to notice or even prevent man-in-the-middle attacks (y/n) y
-
+```
+``` terminal
 # 詢問是否同意接受輸入Token時，給予30±t的時間差
 > By default, tokens are good for 30 seconds and in order to compensate for
 possible time-skew between the client and the server, we allow an extra
 token before and after the current time. If you experience problems with poor
 time synchronization, you can increase the window from its default
 size of 1:30min to about 4min. Do you want to do so (y/n) y
-
+```
+``` terminal
 # 詢問是否同意保護機制
 > If the computer that you are logging into isnt hardened against brute-force
 login attempts, you can enable rate-limiting for the authentication module.
