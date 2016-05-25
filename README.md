@@ -14,7 +14,7 @@ Note： 取之於人太多，希望能開始盡量回饋一些。從開始學習
    * [Android Version](https://play.google.com/store/apps/details?id=com.authy.authy)
    * [Chrome App](https://chrome.google.com/webstore/detail/authy-chrome-extension/fhgenkpocbhhddlgkjnfghpjanffonno)
 
-
+---
 Step 1. Google Authenticator安裝
 ``` terminal
 $ git clone https://github.com/google/google-authenticator.git
@@ -90,6 +90,7 @@ Step 3. 測試
 # 成功！
 ```
 
+---
 Notes: 關閉Vim  
 Hit the Esc key; that goes into command mode. Then you can type
 * `:q` to quit (short for `:quit`)
