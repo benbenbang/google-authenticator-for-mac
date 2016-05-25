@@ -39,6 +39,7 @@ $ sudo cp /usr/local/lib/security/pam_google_authenticator.so /usr/lib/pam/
 # 進入vim修改
 $ sudo vi /etc/pam.d/sshd
 # 增加: auth required pam_google_authenticator.so
+# vim: i for insert, exit見文末Note
 ```
 ``` terminal
 # 備份 /etc/sshd_config
