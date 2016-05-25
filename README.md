@@ -15,6 +15,7 @@ Note： 取之於人太多，希望能開始盡量回饋一些。從開始學習
    * [Chrome App](https://chrome.google.com/webstore/detail/authy-chrome-extension/fhgenkpocbhhddlgkjnfghpjanffonno)
 
 
+Step 1. Google Authenticator安裝
 ``` terminal
 $ git clone https://github.com/google/google-authenticator.git
 # 備份：http://github.com/benbenbang/google-authenticator-for-mac.git
@@ -38,11 +39,14 @@ $ sudo cp /etc/sshd_config /etc/sshd_config_backup
 $ sudo vi /etc/sshd_config
 # 增加 ChallengeResponseAuthentication yes
 # 如果已經有了 #ChallengeResponseAuthentication yes 將#刪除
+```
 
+Step 2. 設定
+``` terminal
 $ google-authenticator
+
 # Terminal 回覆的網址貼去瀏覽器，用Authy或Google Auth掃描（iOS或Android皆有）
 # 本步驟的資訊很重要，請妥善保管
-
 > Do you want authentication tokens to be time-based (y/n) y
 https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=
 otpauth://totp/user@mini.local%3Fsecret%3DABCDEFGHIJKLMNOP
@@ -74,7 +78,10 @@ size of 1:30min to about 4min. Do you want to do so (y/n) y
 login attempts, you can enable rate-limiting for the authentication module.
 By default, this limits attackers to no more than 3 login attempts every 30s.
 Do you want to enable rate-limiting (y/n) y
+```
 
+Step 3. 測試
+``` terminal
 # 大功告成
 # 遠端時會呈現
 > ssh username@host
