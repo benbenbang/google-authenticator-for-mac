@@ -115,3 +115,6 @@ Do you want to enable rate-limiting (y/n) y
   Or you can press `Esc` `ZZ` (`Esc` `Shift+Z` `Shift+Z`) to write/save if the file was changed, then quit.
   Or if you don't want to save changes you can use ZQ instead.
   Vim has extensive help, so type `Esc:help Return` and you will have all your answers and even a neat tutorial.
+
+---
++2-Steps-Authentication+, +兩步驟驗證+, +Mac+, +Google-Authenticator+
