@@ -21,6 +21,8 @@ Note： 取之於人太多，希望能開始盡量回饋一些。從開始學習
 ``` terminal
 $ git clone https://github.com/google/google-authenticator.git
 # 備份：http://github.com/benbenbang/google-authenticator-for-mac.git
+```
+``` terminal
 $ cd google-authenticator/libpam
 $ autoreconf -ivf
 <snip>
@@ -31,16 +33,19 @@ $ ./configure
 <snip>
 $ sudo make install
 <snip>
+```
+``` terminal
 $ sudo cp /usr/local/lib/security/pam_google_authenticator.so /usr/lib/pam/
 # 進入vim修改
 $ sudo vi /etc/pam.d/sshd
-# 增加 auth required pam_google_authenticator.so
+# 增加: auth required pam_google_authenticator.so
+```
+``` terminal
 # 備份 /etc/sshd_config
-# Linux: /etc/ssh/sshd_config
+# Linux位置: /etc/ssh/sshd_config
 $ sudo cp /etc/sshd_config /etc/sshd_config_backup
 $ sudo vi /etc/sshd_config
-# 增加 ChallengeResponseAuthentication yes
-# 如果已經有了 #ChallengeResponseAuthentication yes 將#刪除
+# #ChallengeResponseAuthentication yes → ChallengeResponseAuthentication yes
 ```
 
 ### Step 2. 設定
