@@ -82,7 +82,7 @@ Do you want to enable rate-limiting (y/n) y
 # 成功！
 ```
 
-Notes: 關閉Vim
+Notes: 關閉Vim  
 Hit the Esc key; that goes into command mode. Then you can type
 * `:q` to quit (short for `:quit`)
 * `:q!` to quit without saving (short for `:quit!`)
