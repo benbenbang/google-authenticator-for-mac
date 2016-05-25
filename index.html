@@ -48,10 +48,19 @@
 
 <hr>
 
+<h2>
+<a id="安裝步驟" class="anchor" href="#%E5%AE%89%E8%A3%9D%E6%AD%A5%E9%A9%9F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>安裝步驟</h2>
+
+<p><strong>Caution: 本使用步驟在筆者電腦可正常運行，但不保證本教學完全適用任何情況，風險請評估後自行承擔。</strong>  </p>
+
+<h3>
+<a id="step-1-google-authenticator安裝" class="anchor" href="#step-1-google-authenticator%E5%AE%89%E8%A3%9D" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 1. Google Authenticator安裝</h3>
+
 <pre lang="terminal"><code>$ git clone https://github.com/google/google-authenticator.git
 # 備份：http://github.com/benbenbang/google-authenticator-for-mac.git
-$ cd google-authenticator/libpam
-# 若由備份檔案：cd google-authenticator-for-mac/google-authenticator/libpam
+</code></pre>
+
+<pre lang="terminal"><code>$ cd google-authenticator/libpam
 $ autoreconf -ivf
 &lt;snip&gt;
 $ touch AUTHORS NEWS README ChangeLog
@@ -61,21 +70,28 @@ $ ./configure
 &lt;snip&gt;
 $ sudo make install
 &lt;snip&gt;
-$ sudo cp /usr/local/lib/security/pam_google_authenticator.so /usr/lib/pam/
+</code></pre>
+
+<pre lang="terminal"><code>$ sudo cp /usr/local/lib/security/pam_google_authenticator.so /usr/lib/pam/
 # 進入vim修改
 $ sudo vi /etc/pam.d/sshd
-# 增加 auth required pam_google_authenticator.so
-# 備份 /etc/sshd_config
-# Linux: /etc/ssh/sshd_config
+# 增加: auth required pam_google_authenticator.so
+</code></pre>
+
+<pre lang="terminal"><code># 備份 /etc/sshd_config
+# Linux位置: /etc/ssh/sshd_config
 $ sudo cp /etc/sshd_config /etc/sshd_config_backup
 $ sudo vi /etc/sshd_config
-# 增加 ChallengeResponseAuthentication yes
-# 如果已經有了 #ChallengeResponseAuthentication yes 將#刪除
+# #ChallengeResponseAuthentication yes → ChallengeResponseAuthentication yes
+</code></pre>
 
-$ google-authenticator
+<h3>
+<a id="step-2-設定" class="anchor" href="#step-2-%E8%A8%AD%E5%AE%9A" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 2. 設定</h3>
+
+<pre lang="terminal"><code>$ google-authenticator
+
 # Terminal 回覆的網址貼去瀏覽器，用Authy或Google Auth掃描（iOS或Android皆有）
 # 本步驟的資訊很重要，請妥善保管
-
 &gt; Do you want authentication tokens to be time-based (y/n) y
 https://www.google.com/chart?chs=200x200&amp;chld=M|0&amp;cht=qr&amp;chl=
 otpauth://totp/user@mini.local%3Fsecret%3DABCDEFGHIJKLMNOP
@@ -89,26 +105,33 @@ Your emergency scratch codes are:
   00000000
 
 &gt; Do you want me to update your "/Users/user/.google_authenticator" file (y/n) y
+</code></pre>
 
-# 詢問1Token是否於時效內可多次使用
+<pre lang="terminal"><code># 詢問1Token是否於時效內可多次使用
 &gt; Do you want to disallow multiple uses of the same authentication
 token? This restricts you to one login about every 30s, but it increases
 your chances to notice or even prevent man-in-the-middle attacks (y/n) y
+</code></pre>
 
-# 詢問是否同意接受輸入Token時，給予30±t的時間差
+<pre lang="terminal"><code># 詢問是否同意接受輸入Token時，給予30±t的時間差
 &gt; By default, tokens are good for 30 seconds and in order to compensate for
 possible time-skew between the client and the server, we allow an extra
 token before and after the current time. If you experience problems with poor
 time synchronization, you can increase the window from its default
 size of 1:30min to about 4min. Do you want to do so (y/n) y
+</code></pre>
 
-# 詢問是否同意保護機制
+<pre lang="terminal"><code># 詢問是否同意保護機制
 &gt; If the computer that you are logging into isnt hardened against brute-force
 login attempts, you can enable rate-limiting for the authentication module.
 By default, this limits attackers to no more than 3 login attempts every 30s.
 Do you want to enable rate-limiting (y/n) y
+</code></pre>
 
-# 大功告成
+<h3>
+<a id="step-3-測試" class="anchor" href="#step-3-%E6%B8%AC%E8%A9%A6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 3. 測試</h3>
+
+<pre lang="terminal"><code># 大功告成
 # 遠端時會呈現
 &gt; ssh username@host
 [Verificaiton code:          ] # 查詢動態碼
@@ -118,8 +141,12 @@ Do you want to enable rate-limiting (y/n) y
 
 <hr>
 
-<p>Notes: 關閉Vim<br>
-Hit the Esc key; that goes into command mode. Then you can type</p>
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes:</h2>
+
+<ol>
+<li>關閉Vim<br>
+Hit the Esc key; that goes into command mode. Then you can type
 
 <ul>
 <li>
@@ -139,6 +166,8 @@ Or you can press <code>Esc</code> <code>ZZ</code> (<code>Esc</code> <code>Shift+
 Or if you don't want to save changes you can use ZQ instead.
 Vim has extensive help, so type <code>Esc:help Return</code> and you will have all your answers and even a neat tutorial.</li>
 </ul>
+</li>
+</ol>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/benbenbang/google-authenticator-for-mac">Google-Authenticator-for-mac</a> is maintained by <a href="https://github.com/benbenbang">benbenbang</a>.</span>
