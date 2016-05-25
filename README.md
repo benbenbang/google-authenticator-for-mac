@@ -44,7 +44,8 @@ $ google-authenticator
 # 本步驟的資訊很重要，請妥善保管
 
 > Do you want authentication tokens to be time-based (y/n) y
-https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/user@mini.local%3Fsecret%3DABCDEFGHIJKLMNOP
+https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=
+otpauth://totp/user@mini.local%3Fsecret%3DABCDEFGHIJKLMNOP
 Your new secret key is: ABCDEFGHIJKLMNOP 
 Your verification code is 000000
 Your emergency scratch codes are:
