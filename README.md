@@ -16,7 +16,7 @@ Note： 取之於人太多，希望能開始盡量回饋一些。從開始學習
 
 ---
 ## 安裝步驟
-**Caution: 本使用步驟在筆者電腦可正常運行，但不保證本教學完全適用任何情況，風險請評估後自行承擔。**
+**Caution: 本使用步驟在筆者電腦可正常運行，但不保證本教學完全適用任何情況，風險請評估後自行承擔。**  
 Step 1. Google Authenticator安裝
 ``` terminal
 $ git clone https://github.com/google/google-authenticator.git
@@ -93,7 +93,8 @@ Step 3. 測試
 ```
 
 ---
-Notes: 關閉Vim  
+## Notes: 
+1. 關閉Vim  
 Hit the Esc key; that goes into command mode. Then you can type
 * `:q` to quit (short for `:quit`)
 * `:q!` to quit without saving (short for `:quit!`)
