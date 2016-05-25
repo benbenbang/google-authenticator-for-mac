@@ -95,13 +95,13 @@ Step 3. 測試
 ---
 ## Notes: 
 1. 關閉Vim  
-Hit the Esc key; that goes into command mode. Then you can type
-* `:q` to quit (short for `:quit`)
-* `:q!` to quit without saving (short for `:quit!`)
-* `:wq` to write and quit (think write and quit)
-* `:wq!` to write and quit even if file has only read permission (if file does not have write permission: force write)
-* `:x` to write and quit (shorter than `:wq`)
-* `:qa` to quit all (short for `:quitall`)
+  Hit the Esc key; that goes into command mode. Then you can type
+  * `:q` to quit (short for `:quit`)
+  * `:q!` to quit without saving (short for `:quit!`)
+  * `:wq` to write and quit (think write and quit)
+  * `:wq!` to write and quit even if file has only read permission (if file does not have write permission: force write)
+  * `:x` to write and quit (shorter than `:wq`)
+  * `:qa` to quit all (short for `:quitall`)
   When you press `:`, a `:`will appear at the bottom of the screen.
   Or you can press `Esc` `ZZ` (`Esc` `Shift+Z` `Shift+Z`) to write/save if the file was changed, then quit.
   Or if you don't want to save changes you can use ZQ instead.
