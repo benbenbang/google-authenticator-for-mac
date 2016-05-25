@@ -17,7 +17,7 @@ Note： 取之於人太多，希望能開始盡量回饋一些。從開始學習
 ---
 ## 安裝步驟
 **Caution: 本使用步驟在筆者電腦可正常運行，但不保證本教學完全適用任何情況，風險請評估後自行承擔。**  
-Step 1. Google Authenticator安裝
+### Step 1. Google Authenticator安裝
 ``` terminal
 $ git clone https://github.com/google/google-authenticator.git
 # 備份：http://github.com/benbenbang/google-authenticator-for-mac.git
@@ -43,7 +43,7 @@ $ sudo vi /etc/sshd_config
 # 如果已經有了 #ChallengeResponseAuthentication yes 將#刪除
 ```
 
-Step 2. 設定
+### Step 2. 設定
 ``` terminal
 $ google-authenticator
 
@@ -82,7 +82,7 @@ By default, this limits attackers to no more than 3 login attempts every 30s.
 Do you want to enable rate-limiting (y/n) y
 ```
 
-Step 3. 測試
+### Step 3. 測試
 ``` terminal
 # 大功告成
 # 遠端時會呈現
